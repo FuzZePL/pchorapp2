@@ -4,11 +4,11 @@ import '../../values/colors.dart';
 
 class OptionsItem extends StatefulWidget {
   const OptionsItem({
-    Key? key,
+    super.key,
     required this.onClick,
     required this.icon,
     required this.i,
-  }) : super(key: key);
+  });
   final VoidCallback onClick;
   final Widget icon;
   final int i;
@@ -68,10 +68,7 @@ class _OptionsItemState extends State<OptionsItem>
               ),
             ],
           ),
-          child: IconButton(
-            onPressed: widget.onClick,
-            icon: widget.icon,
-          ),
+          child: IconButton(onPressed: widget.onClick, icon: widget.icon),
         ),
       ),
     );
