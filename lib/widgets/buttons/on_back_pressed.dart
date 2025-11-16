@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pchor_app/values/colors.dart';
+import 'package:pchor_app/values/constant_functions.dart';
 import 'package:pchor_app/values/size_config.dart';
 import 'package:pchor_app/widgets/buttons/ink_well_rounded.dart';
 
@@ -19,7 +20,7 @@ class OnBackPressed extends StatelessWidget {
       height: defaultSize * 5.5,
       width: defaultSize * 5.5,
       child: InkWellRounded(
-        radius: 8,
+        radius: 12,
         shadow: const BoxShadow(color: KColors.kBackgroundColor),
         onTap: onBackPressed,
         color: KColors.kBackgroundColor,
@@ -28,8 +29,8 @@ class OnBackPressed extends StatelessWidget {
           height: defaultSize * 5.5,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: KColors.kBackgroundColor,
+            borderRadius: BorderRadius.circular(12),
+            gradient: ConstantFunctions.secondaryGradient(),
             boxShadow: const [
               BoxShadow(
                 color: KColors.kShadowColor,
@@ -39,7 +40,7 @@ class OnBackPressed extends StatelessWidget {
               ),
             ],
           ),
-          child: Icon(icon, size: 22, color: KColors.kTextColorDark),
+          child: Icon(icon, size: 22, color: KColors.kBackgroundColor),
         ),
       ),
     );

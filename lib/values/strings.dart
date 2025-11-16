@@ -2,7 +2,7 @@ class Strings {
   static const String appName = 'PChOR App';
   static const String password = 'Hasło';
   static const String weSentYouAnEmial =
-      'Wysłaliśmy tobie email z kodem weryfikacyjnym, podaj go tutaj!';
+      'Wysłaliśmy Tobie E-mail z kodem weryfikacyjnym, podaj go tutaj!';
   static const String verifyEmial = 'Zweryfikuj swój adres email';
   static const String login = 'Zaloguj się';
   static const String email = 'Twój Email';
@@ -75,4 +75,12 @@ class Strings {
       'Pole nie może zawierać kombinacji "/*~~@(*%&%#" ';
   static const String usernameMustBe20 = 'Nazwa musi mieć do 20 znaków';
   static const String search = 'Szukaj';
+  static const String name = 'Imię';
+  static const String surname = 'Nazwisko';
+  static const String nextStep = 'Dalej!';
+  static const String emailSendt = "Email wysłany";
+  static const String emailSendtError =
+      "Błąd z wysyłanie maila. Sprawdź poprawnośc E-maila.";
+  static const String registerFinal = "Zakończ";
+  static const String wrongCode = "Nieprawidłowy kod";
 }

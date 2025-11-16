@@ -91,7 +91,7 @@ class _RoundedInputFieldState extends State<RoundedInputField>
           textInputAction: widget.textInputAction,
           textAlign: TextAlign.justify,
           style: const TextStyle(
-            color: KColors.kTextColorDark,
+            color: KColors.kBlackColor,
             fontWeight: FontWeight.bold,
           ),
           validator: (value) {
@@ -101,7 +101,6 @@ class _RoundedInputFieldState extends State<RoundedInputField>
                 return Strings.cantContainSpecial;
               }
             }
-
             if (type == 'Email') {
               if (value == null) {
                 return Strings.emailMustNotBeEmpty;

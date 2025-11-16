@@ -121,62 +121,64 @@ class _LoginScreenState extends State<LoginScreen> {
         decoration: BoxDecoration(
           gradient: ConstantFunctions.defaultGradient(),
         ),
-        child: Align(
-          alignment: AlignmentGeometry.bottomCenter,
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24.0),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  // Tytuł
-                  Text(
-                    "Zaloguj się",
-                    style: Theme.of(context).textTheme.headlineMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 32),
-                  RoundedInputField(
-                    controller: _emailController,
-                    hintText: Strings.email,
-                    icon: Icons.email_outlined,
-                    onChanged: (val) {},
-                    type: 'Email',
-                    onSaved: (val) {},
-                    textInputAction: TextInputAction.next,
-                    inputType: TextInputType.text,
-                    isPassword: false,
-                  ),
-                  RoundedInputField(
-                    controller: _passwordController,
-                    hintText: Strings.password,
-                    icon: Icons.password_outlined,
-                    onChanged: (val) {},
-                    type: 'pass',
-                    onSaved: (val) {},
-                    textInputAction: TextInputAction.done,
-                    inputType: TextInputType.text,
-                    isPassword: true,
-                  ),
-                  const SizedBox(height: 24),
-                  DefaultButton(
-                    defaultSize: _defaultSize,
-                    onTap: () {},
-                    text: Strings.login,
-                    icon: Icons.login_rounded,
-                    gradient: ConstantFunctions.secondaryGradient(),
-                  ),
-                  const SizedBox(height: 16),
-                  // Link do Rejestracji
-                  TextButton(
-                    onPressed: _navigateToRegister,
-                    child: const Text("Zarejestruj się"),
-                  ),
-                  const SizedBox(height: 6),
-                  SizedBox(height: _defaultSize * 8),
-                ],
+        child: SafeArea(
+          child: Align(
+            alignment: AlignmentGeometry.bottomCenter,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(24.0),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // Tytuł
+                    Text(
+                      "Zaloguj się",
+                      style: Theme.of(context).textTheme.headlineMedium,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 32),
+                    RoundedInputField(
+                      controller: _emailController,
+                      hintText: Strings.email,
+                      icon: Icons.email_outlined,
+                      onChanged: (val) {},
+                      type: 'Email',
+                      onSaved: (val) {},
+                      textInputAction: TextInputAction.next,
+                      inputType: TextInputType.emailAddress,
+                      isPassword: false,
+                    ),
+                    RoundedInputField(
+                      controller: _passwordController,
+                      hintText: Strings.password,
+                      icon: Icons.password_outlined,
+                      onChanged: (val) {},
+                      type: 'pass',
+                      onSaved: (val) {},
+                      textInputAction: TextInputAction.done,
+                      inputType: TextInputType.text,
+                      isPassword: true,
+                    ),
+                    const SizedBox(height: 24),
+                    DefaultButton(
+                      defaultSize: _defaultSize,
+                      onTap: () {},
+                      text: Strings.login,
+                      icon: Icons.login_rounded,
+                      gradient: ConstantFunctions.secondaryGradient(),
+                    ),
+                    const SizedBox(height: 16),
+                    // Link do Rejestracji
+                    TextButton(
+                      onPressed: _navigateToRegister,
+                      child: const Text("Zarejestruj się"),
+                    ),
+                    const SizedBox(height: 6),
+                    SizedBox(height: _defaultSize * 8),
+                  ],
+                ),
               ),
             ),
           ),

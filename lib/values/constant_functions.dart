@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pchor_app/values/colors.dart';
+import 'package:pchor_app/values/size_config.dart';
 import 'package:pchor_app/values/strings.dart';
 
 class ConstantFunctions {
@@ -117,3 +118,19 @@ class ConstantFunctions {
     );
   }
 }
+
+OutlineInputBorder outlineInputBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(15),
+    borderSide: const BorderSide(color: Colors.black),
+  );
+}
+
+final otpInputDecoration = InputDecoration(
+  contentPadding: EdgeInsets.symmetric(
+    vertical: getProportionateScreenWidth(15),
+  ),
+  enabledBorder: outlineInputBorder(),
+  focusedBorder: outlineInputBorder(),
+  border: outlineInputBorder(),
+);

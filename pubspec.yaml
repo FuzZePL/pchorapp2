@@ -46,6 +46,7 @@ dependencies:
   google_nav_bar: ^5.0.7
   image_picker: ^1.2.0
   flutter_typeahead: ^5.2.0
+  email_auth:
 
 
 dev_dependencies:
