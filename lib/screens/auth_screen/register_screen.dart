@@ -56,7 +56,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void _onBackPressed() {
-    print("fdsfdsfsd");
     if (_step == 0) {
       Navigator.of(context).pop();
     } else {
@@ -109,15 +108,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
         child: SafeArea(
           child: Stack(
             children: [
+              pageView,
               Positioned(
-                top: 10,
-                left: 10,
+                top: 14,
+                left: 14,
                 child: OnBackPressed(
                   icon: Icons.arrow_back_ios_new_rounded,
                   onBackPressed: _onBackPressed,
                 ),
               ),
-              pageView,
             ],
           ),
         ),

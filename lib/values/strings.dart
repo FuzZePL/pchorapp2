@@ -3,7 +3,7 @@ class Strings {
   static const String password = 'Hasło';
   static const String weSentYouAnEmial =
       'Wysłaliśmy Tobie E-mail z kodem weryfikacyjnym, podaj go tutaj!';
-  static const String verifyEmial = 'Zweryfikuj swój adres email';
+  static const String verifyEmial = 'Zweryfikuj swój adres E-mail';
   static const String login = 'Zaloguj się';
   static const String email = 'Twój Email';
   static const String haveAnAccount = 'Nie masz jeszcze konta ?';
@@ -16,7 +16,7 @@ class Strings {
   static const String usernameMustBeCorrect = 'Nazwa musi być poprawna';
   static const String passwordsMustBeTheSame = 'Hasła muszą być takie same';
   static const String wrongVerifyCode = 'Zły kod weryfikacyjny';
-  static const String emailNotRecived = 'Email nie dotarł?  ';
+  static const String emailNotRecived = 'E-mail nie dotarł?  ';
   static const String sendOnceMore = 'Wyślij jescze raz!';
   static const String providePassword = 'Musisz podać hasło';
   static const String providePassword2 = 'Podaj hasło';
