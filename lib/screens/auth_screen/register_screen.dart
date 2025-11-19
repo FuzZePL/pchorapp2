@@ -63,6 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       String surname = _surnameController.value.text;
       if (email.endsWith("@student.wat.edu.pl")) {
         if (name.isNotEmpty && surname.isNotEmpty) {
+          return true;
         } else {
           ConstantFunctions.showSnackBar(
             context,
