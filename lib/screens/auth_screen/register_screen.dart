@@ -45,14 +45,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
+  bool _validateData() {
+    return true;
+  }
+
   void _submitStep(PageController controller) {
-    _step = 1;
-    setState(() {});
-    controller.animateToPage(
-      _step,
-      duration: const Duration(milliseconds: 600),
-      curve: Curves.ease,
-    );
+    if (_validateData()) {
+      _step = 1;
+      setState(() {});
+      controller.animateToPage(
+        _step,
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.ease,
+      );
+    }
   }
 
   void _onBackPressed() {
