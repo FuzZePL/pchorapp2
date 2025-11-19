@@ -11,7 +11,10 @@ class Strings {
   static const String anErrorOccurred = 'Wystąpił niespodziewany błąd.';
   static const String registerComplete = 'Stwórz konto';
   static const String emailMustNotBeEmpty = 'Email nie może być pusty';
-  static const String emailMustBeCorrect = 'Email musi być poprawny';
+  static const String nameMustnotBeEmpty =
+      'Musisz wypełnić pole imię i nazwisko';
+  static const String emailMustBeCorrect =
+      'Email musi być poprawny (kończyć się na @student.wat.edu.pl)';
   static const String usernameMustNotBeEmpty = 'Nazwa nie może być pusta';
   static const String usernameMustBeCorrect = 'Nazwa musi być poprawna';
   static const String passwordsMustBeTheSame = 'Hasła muszą być takie same';

@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:pchor_app/screens/auth_screen/register_widget_2.dart';
 import 'package:pchor_app/values/colors.dart';
@@ -34,7 +37,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   final double _defaultSize = SizeConfig.defaultSize!;
   bool _isLoading = false;
-  final String _requiredDomain = "@student.wat.edu.pl";
 
   @override
   void dispose() {
@@ -46,11 +48,44 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
-  bool _validateData() {
-    if (_passwordController.value == _repeatPasswordController.value) {
+  String hashSHA256(String input) {
+    var bytes = utf8.encode(input);
+    var digest = sha256.convert(bytes);
+    return digest.toString();
+  }
 
+  bool _validateData() {
+    if (_passwordController.value.text ==
+        _repeatPasswordController.value.text) {
+      String password = hashSHA256(_passwordController.value.text);
+      String email = _emailController.value.text;
+      String name = _nameController.value.text;
+      String surname = _surnameController.value.text;
+      if (email.endsWith("@student.wat.edu.pl")) {
+        if (name.isNotEmpty && surname.isNotEmpty) {
+        } else {
+          ConstantFunctions.showSnackBar(
+            context,
+            KColors.kErrorColor,
+            KColors.kWhiteColor,
+            Strings.nameMustnotBeEmpty,
+          );
+        }
+      } else {
+        ConstantFunctions.showSnackBar(
+          context,
+          KColors.kErrorColor,
+          KColors.kWhiteColor,
+          Strings.emailMustBeCorrect,
+        );
+      }
     } else {
-      ConstantFunctions.showSnackBar(context, KColors.kErrorColor, K, text)
+      ConstantFunctions.showSnackBar(
+        context,
+        KColors.kErrorColor,
+        KColors.kWhiteColor,
+        Strings.passwordsMustBeTheSame,
+      );
     }
     return false;
   }
