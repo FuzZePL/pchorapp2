@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pchor_app/screens/auth_screen/register_widget_2.dart';
+import 'package:pchor_app/values/colors.dart';
 import 'package:pchor_app/values/constant_functions.dart';
 import 'package:pchor_app/values/size_config.dart';
 import 'package:pchor_app/values/strings.dart';
@@ -46,7 +47,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   bool _validateData() {
-    return true;
+    if (_passwordController.value == _repeatPasswordController.value) {
+
+    } else {
+      ConstantFunctions.showSnackBar(context, KColors.kErrorColor, K, text)
+    }
+    return false;
   }
 
   void _submitStep(PageController controller) {
