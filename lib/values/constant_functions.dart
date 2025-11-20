@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:pchor_app/values/colors.dart';
 import 'package:pchor_app/values/size_config.dart';
@@ -18,6 +21,12 @@ class ConstantFunctions {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
     );
+  }
+
+  String hashSHA256(String input) {
+    var bytes = utf8.encode(input);
+    var digest = sha256.convert(bytes);
+    return digest.toString();
   }
 
   static void showLoadingDialog(BuildContext context) {

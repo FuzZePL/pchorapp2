@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:pchor_app/screens/auth_screen/register_widget_2.dart';
 import 'package:pchor_app/values/colors.dart';
@@ -48,16 +45,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
-  String hashSHA256(String input) {
-    var bytes = utf8.encode(input);
-    var digest = sha256.convert(bytes);
-    return digest.toString();
-  }
-
   bool _validateData() {
     if (_passwordController.value.text ==
         _repeatPasswordController.value.text) {
-      String password = hashSHA256(_passwordController.value.text);
+      String password = ConstantFunctions().hashSHA256(
+        _passwordController.value.text,
+      );
       String email = _emailController.value.text;
       String name = _nameController.value.text;
       String surname = _surnameController.value.text;
