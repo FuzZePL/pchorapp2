@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pchor_app/screens/auth_screen/register_widget_2.dart';
+import 'package:pchor_app/screens/main_screen/main_screen.dart';
 import 'package:pchor_app/values/colors.dart';
 import 'package:pchor_app/values/constant_functions.dart';
 import 'package:pchor_app/values/size_config.dart';
 import 'package:pchor_app/values/strings.dart';
+import 'package:pchor_app/web/server.dart';
 import 'package:pchor_app/widgets/buttons/default_button.dart';
 import 'package:pchor_app/widgets/buttons/on_back_pressed.dart';
 import 'package:pchor_app/widgets/text_fields/rounded_input_field.dart';
@@ -56,7 +58,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       String surname = _surnameController.value.text;
       if (email.endsWith("@student.wat.edu.pl")) {
         if (name.isNotEmpty && surname.isNotEmpty) {
-          return true;
+          return Server().createAccount(email, password, name, surname);
         } else {
           ConstantFunctions.showSnackBar(
             context,
@@ -85,7 +87,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void _submitStep(PageController controller) {
-    if (_validateData()) {
+    bool output = _validateData();
+    if (output && _step == 0) {
       _step = 1;
       setState(() {});
       controller.animateToPage(
@@ -93,6 +96,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
         duration: const Duration(milliseconds: 600),
         curve: Curves.ease,
       );
+    } else if (output && _step == 1) {
+      Navigator.of(context).pushReplacementNamed(MainScreen.routeName);
     }
   }
 
