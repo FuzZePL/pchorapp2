@@ -249,6 +249,7 @@ class RegisterWidget1 extends StatelessWidget {
               ),
               SizedBox(height: 16),
               // TODO add pluton compania batalion
+              Row(children: []),
               DefaultButton(
                 defaultSize: _defaultSize,
                 onTap: () {
